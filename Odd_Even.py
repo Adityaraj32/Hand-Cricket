@@ -1,5 +1,6 @@
 import random
 
+print("\n\t\t\t\t\t\t\tWelcome to the Advance Odd Even Game\n")
 
 while True:
     # taking input from user for odd or even
@@ -70,7 +71,6 @@ elif choose_result == "Loose":
 # in this we are writing who win or lose
 You_play = None
 Comp_play = None
-add_bat_boll = 0
 add_bat_boll2 = 0
 add_bat_boll3 = 0
 
@@ -79,9 +79,10 @@ if bat_ball == "Batting":
         Comp_play = random.randint(1,6)
         You_play = int(input("Your Turn: "))
         print(f"Comp Choose {Comp_play}\n")
-        add_bat_boll3 += You_play
+        add_bat_boll2 += You_play
         if You_play>6:
             print("Please! write number lower than 6 or 6")
+            add_bat_boll2 -= You_play
             continue
         elif You_play == Comp_play:
             print("game over! ")
@@ -95,10 +96,11 @@ if bat_ball == "Batting":
         add_bat_boll3 += Comp_play
         if You_play>6:
             print("Please! write number lower than 6 or 6")
+            add_bat_boll3 -= You_play
             continue
         if You_play == Comp_play and add_bat_boll3>add_bat_boll2 + 1:
             print("You loosse! ")
-            print(f"\nYou loose by {add_bat_boll3 - add_bat_boll2+1}")
+            print(f"\nYou loose by {add_bat_boll3 - add_bat_boll2}")
             break
         if You_play == Comp_play and add_bat_boll3 == add_bat_boll2 + 1:
             print("You loosse! ")
@@ -112,9 +114,10 @@ elif bat_ball == "Bolling":
         Comp_play = random.randint(1,6)
         You_play = int(input("Your Turn: "))
         print(f"Comp Choose {Comp_play}\n")
-        add_bat_boll3 += Comp_play
+        add_bat_boll2 += Comp_play
         if You_play>6:
             print("Please! write number lower than 6 or 6")
+            add_bat_boll2 -= You_play
             continue
         elif You_play == Comp_play:
             print("game over! ")
@@ -128,6 +131,7 @@ elif bat_ball == "Bolling":
         add_bat_boll3 += You_play
         if You_play>6:
             print("Please! write number lower than 6 or 6")
+            add_bat_boll3 -= You_play
             continue
         if You_play == Comp_play and add_bat_boll3>add_bat_boll2 + 1:
             print("Congrats! You Win! ")
@@ -138,4 +142,74 @@ elif bat_ball == "Bolling":
             break
         if You_play == Comp_play and add_bat_boll3 < add_bat_boll2 + 1:
             print("\n\t\t\tYou Loosse! ")
+            break
+
+elif comp_bat_boll == "Batting":
+    while True:
+        Comp_play = random.randint(1,6)
+        You_play = int(input("Your Turn: "))
+        print(f"Comp Choose {Comp_play}\n")
+        add_bat_boll2 += Comp_play
+        if You_play>6:
+            print("Please! write number lower than 6 or 6")
+            add_bat_boll2 -= You_play
+            continue
+        elif You_play == Comp_play:
+            print("game over! ")
+            print(f"\nComp have targeted: {add_bat_boll2 + 1}\n")
+            break
+    print(f"\t\t\tYou Have to Target {add_bat_boll2 + 1}")
+    while True:
+        Comp_play = random.randint(1,6)
+        You_play = int(input("Your Turn: "))
+        print(f"Comp Choose {Comp_play}\n")
+        add_bat_boll3 += You_play
+        if You_play>6:
+            print("Please! write number lower than 6 or 6")
+            add_bat_boll3 -= You_play
+            continue
+        if You_play == Comp_play and add_bat_boll3>add_bat_boll2 + 1:
+            print("\n\t\t\tCongrats! You Win! ")
+            break
+        if You_play == Comp_play and add_bat_boll3 == add_bat_boll2 + 1:
+            print("You loosse! ")
+            break
+        if You_play == Comp_play and add_bat_boll3 < add_bat_boll2 + 1:
+            print("You loosse! ")
+            print(f"You loose by {add_bat_boll3 - add_bat_boll2+1}")
+            break
+
+elif bat_ball == "Bolling":
+    while True:
+        Comp_play = random.randint(1,6)
+        You_play = int(input("Your Turn: "))
+        print(f"Comp Choose {Comp_play}\n")
+        add_bat_boll2 += You_play
+        if You_play>6:
+            print("Please! write number lower than 6 or 6")
+            add_bat_boll2 -= You_play
+            continue
+        elif You_play == Comp_play:
+            print("game over! ")
+            print(f"\nYou have targeted: {add_bat_boll2 + 1}\n")
+            break
+    print(f"\t\t\tComp Have to Target {add_bat_boll2 + 1}")
+    while True:
+        Comp_play = random.randint(1,6)
+        You_play = int(input("Your Turn: "))
+        print(f"Comp Choose {Comp_play}\n")
+        add_bat_boll3 += Comp_play
+        if You_play>6:
+            print("Please! write number lower than 6 or 6")
+            add_bat_boll3 -= You_play
+            continue
+        if Comp_play == You_play and add_bat_boll3>add_bat_boll2 + 1:
+            print("You loosse! ")
+            print(f"You loose by {add_bat_boll3 - add_bat_boll2+1}")
+            break
+        if You_play == Comp_play and add_bat_boll3 == add_bat_boll2 + 1:
+            print("You loosse! ")
+            break
+        if You_play == Comp_play and add_bat_boll3 < add_bat_boll2 + 1:
+            print("\n\t\t\tCongrats! You Win! ")
             break
