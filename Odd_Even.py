@@ -24,7 +24,6 @@ while True:
     # taking input from the user for batting and boll
     you = int(input("\nEnter an number: "))
     Comp2 = random.randint(1,6)
-    comp = 2
     # Error Handling
     if you > 6:
         print("Plese! Enter Number lower than 6 or 6")
@@ -32,8 +31,7 @@ while True:
     break
 
 # seeing who win in this game for batting and boll
-# add = Comp2 + you
-add = comp + you
+add = Comp2 + you
 print(f"Computer choose: {Comp2}\n")
 print(f"The add of you and computer is {add}")
 
